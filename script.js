@@ -14,6 +14,24 @@ const PhysicalActivities = document.querySelector(".Physical-Activity");
 const HelpToCleanTheHouse = document.querySelector(".Help-to-clean-the-House");
 const Quran = document.querySelector(".Quran");
 const Others2 = document.querySelector(".Others2");
+const twoEggs = document.querySelector(".twoEggs");
+const twoMilk = document.querySelector(".twoMilk");
+const twoRice = document.querySelector(".twoRice");
+const twoRoti = document.querySelector(".twoRoti");
+const twoFruits = document.querySelector(".twoFruits");
+const twoVegetables = document.querySelector(".twoVegetables");
+const twoDates = document.querySelector(".twoDates");
+const twoNuts = document.querySelector(".twoNuts");
+const twoOthers1 = document.querySelector(".twoOthers");
+const twoSalahPrayer = document.querySelector(".twoPrayer");
+const twoSchoolHomework = document.querySelector(".twoSchool-Homework");
+const twoStudies = document.querySelector(".twoStudies");
+const twoPhysicalActivities = document.querySelector(".twoPhysical-Activity");
+const twoHelpToCleanTheHouse = document.querySelector(
+  ".twoHelp-to-clean-the-House"
+);
+const twoQuran = document.querySelector(".twoQuran");
+const twoOthers2 = document.querySelector(".twoOthers2");
 
 document.querySelector(".Log-In").addEventListener("click", function () {
   const Email = document.querySelector(".Email").value;
@@ -73,28 +91,37 @@ const Name = document.querySelector(".name");
 let whichTable = 0;
 
 document.querySelector(".submit1").addEventListener("click", function () {
-  whichTable = 1;
-  document.querySelector(".NP-Buttons").style.display = "block";
-  document.querySelector(".Table1-Heading").style.display = "block";
-  document.querySelector(".Table1").style.display = "block";
-  document.querySelector(".Table1").style.marginTop = "2px";
-  document.querySelector(".preview").style.display = "none";
-  document.querySelector(".submit1").style.display = "none";
-  document.querySelector(".Select-all").style.display = "none";
-  document.querySelector(".name").style.display = "block";
-  document.querySelector(".Button1").textContent =
-    document.querySelector(".name").value;
-  document.querySelector(".Button1").style.display = "block";
-  document.querySelector(".Button1").style.width = "160px";
-  document.querySelector(".Add-profile").style.display = "block";
-  document.querySelector(".name").style.display = "none";
-  document.querySelector(".points").style.display = "block";
-  document.querySelector(".day-points").style.display = "block";
-  document.querySelector(".num-of-points").style.display = "block";
+  if (document.querySelector(".name").value == "") {
+    alert("Enter Your Child's Name");
+  }
+
+  if (!document.querySelector(".name").value == "") {
+    whichTable = 1;
+    document.querySelector(".NP-Buttons").style.display = "block";
+    document.querySelector(".Table1-Heading").style.display = "block";
+    document.querySelector(".Table1").style.display = "block";
+    document.querySelector(".Table1").style.marginTop = "2px";
+    document.querySelector(".preview").style.display = "none";
+    document.querySelector(".submit1").style.display = "none";
+    document.querySelector(".Select-all").style.display = "none";
+    document.querySelector(".name").style.display = "block";
+    document.querySelector(".Button1").textContent =
+      document.querySelector(".name").value;
+    document.querySelector(".Button1").style.display = "block";
+    document.querySelector(".Button1").style.width = "160px";
+    document.querySelector(".Add-profile").style.display = "block";
+    document.querySelector(".name").style.display = "none";
+    document.querySelector(".points").style.display = "block";
+    document.querySelector(".day-points").style.display = "block";
+    document.querySelector(".num-of-points").style.display = "block";
+    document.querySelector(".individ-week-points").style.display = "block";
+  }
 });
 
 document.querySelector(".nextButton").addEventListener("click", function () {
   whichTable = 2;
+  document.querySelector(".green2").style.backgroundColor = "#17ff2a";
+  document.querySelector(".green1").style.backgroundColor = "transparent";
   document.querySelector(".Table1").style.display = "none";
   document.querySelector(".Table1-2").style.display = "block";
   document.querySelector(".Table1-2").style.marginTop = "2%";
@@ -114,6 +141,8 @@ document
   .querySelector(".previousButton2")
   .addEventListener("click", function () {
     whichTable = 1;
+    document.querySelector(".green1").style.backgroundColor = "#17ff2a";
+    document.querySelector(".green2").style.backgroundColor = "transparent";
     document.querySelector(".Table1").style.display = "block";
     document.querySelector(".Table1-2").style.display = "none";
     document.querySelector(".NP-Buttons").style.display = "block";
@@ -128,6 +157,8 @@ document
 
 document.querySelector(".nextButton2").addEventListener("click", function () {
   whichTable = 3;
+  document.querySelector(".green3").style.backgroundColor = "#17ff2a";
+  document.querySelector(".green2").style.backgroundColor = "transparent";
   document.querySelector(".Table1-2").style.display = "none";
   document.querySelector(".Table1-3").style.display = "block";
   document.querySelector(".Table1-3").style.marginTop = "0px";
@@ -145,6 +176,8 @@ document
   .querySelector(".previousButton3")
   .addEventListener("click", function () {
     whichTable = 2;
+    document.querySelector(".green2").style.backgroundColor = "#17ff2a";
+    document.querySelector(".green3").style.backgroundColor = "transparent";
     document.querySelector(".Table1-2").style.display = "block";
     document.querySelector(".Table1-3").style.display = "none";
     document.querySelector(".NP-Buttons2").style.display = "block";
@@ -159,6 +192,9 @@ document
 
 document.querySelector(".nextButton3").addEventListener("click", function () {
   whichTable = 4;
+  document.querySelector(".green4").style.backgroundColor = "#17ff2a";
+  document.querySelector(".green3").style.backgroundColor = "transparent";
+  document.querySelector(".total-week-points").style.display = "block";
   document.querySelector(".Table1-3").style.display = "none";
   document.querySelector(".Table1-4").style.display = "block";
   document.querySelector(".Table1-4").style.marginTop = "0px";
@@ -176,6 +212,9 @@ document
   .querySelector(".previousButton4")
   .addEventListener("click", function () {
     whichTable = 3;
+    document.querySelector(".total-week-points").style.display = "none";
+    document.querySelector(".green3").style.backgroundColor = "#17ff2a";
+    document.querySelector(".green4").style.backgroundColor = "transparent";
     document.querySelector(".Table1-3").style.display = "block";
     document.querySelector(".Table1-4").style.display = "none";
     document.querySelector(".NP-Buttons3").style.display = "block";
@@ -439,6 +478,22 @@ yes.forEach((yes) => {
   yes.addEventListener("click", () => {
     if (!clicked) {
       numOfPoints.textContent = parseInt(numOfPoints.textContent) + 5;
+      document.querySelector(".week1-points").textContent =
+        parseInt(document.querySelector(".week1-points").textContent) + 5;
+      clicked = true;
+    }
+  });
+});
+
+const no = document.querySelectorAll(".no");
+
+no.forEach((no) => {
+  let clicked = false;
+  no.addEventListener("click", () => {
+    if (!clicked) {
+      numOfPoints.textContent = parseInt(numOfPoints.textContent) - 1;
+      document.querySelector(".week1-points").textContent =
+        parseInt(document.querySelector(".week1-points").textContent) - 1;
       clicked = true;
     }
   });
@@ -452,6 +507,8 @@ yes2.forEach((yes2) => {
   yes2.addEventListener("click", () => {
     if (!clicked) {
       numOfPoints2.textContent = parseInt(numOfPoints2.textContent) + 5;
+      document.querySelector(".week2-points").textContent =
+        parseInt(document.querySelector(".week2-points").textContent) + 5;
       clicked = true;
     }
   });
@@ -464,6 +521,82 @@ no2.forEach((no2) => {
   no2.addEventListener("click", () => {
     if (!clicked) {
       numOfPoints2.textContent = parseInt(numOfPoints2.textContent) - 1;
+      document.querySelector(".week2-points").textContent =
+        parseInt(document.querySelector(".week2-points").textContent) - 1;
+      clicked = true;
+    }
+  });
+});
+
+const yes3 = document.querySelectorAll(".yes3");
+const numOfPoints3 = document.querySelector(".num-of-points3");
+
+yes3.forEach((yes3) => {
+  let clicked = false;
+  yes3.addEventListener("click", () => {
+    if (!clicked) {
+      numOfPoints3.textContent = parseInt(numOfPoints3.textContent) + 5;
+      document.querySelector(".week3-points").textContent =
+        parseInt(document.querySelector(".week3-points").textContent) + 5;
+      clicked = true;
+    }
+  });
+});
+
+const no3 = document.querySelectorAll(".no3");
+
+no3.forEach((no3) => {
+  let clicked = false;
+  no3.addEventListener("click", () => {
+    if (!clicked) {
+      numOfPoints3.textContent = parseInt(numOfPoints3.textContent) - 1;
+      document.querySelector(".week3-points").textContent =
+        parseInt(document.querySelector(".week3-points").textContent) - 1;
+      clicked = true;
+    }
+  });
+});
+
+const yes4 = document.querySelectorAll(".yes4");
+const numOfPoints4 = document.querySelector(".num-of-points4");
+
+yes4.forEach((yes4) => {
+  let clicked = false;
+  yes4.addEventListener("click", () => {
+    if (!clicked) {
+      numOfPoints4.textContent = parseInt(numOfPoints4.textContent) + 5;
+      document.querySelector(".week4-points").textContent =
+        parseInt(document.querySelector(".week4-points").textContent) + 5;
+      document.querySelector(".total-week-points-amount").textContent =
+        parseInt(
+          document.querySelector(".total-week-points-amount").textContent
+        ) +
+        parseInt(document.querySelector(".week1-points").textContent) +
+        parseInt(document.querySelector(".week2-points").textContent) +
+        parseInt(document.querySelector(".week3-points").textContent) +
+        parseInt(document.querySelector(".week4-points").textContent);
+      clicked = true;
+    }
+  });
+});
+
+const no4 = document.querySelectorAll(".no4");
+
+no4.forEach((no4) => {
+  let clicked = false;
+  no4.addEventListener("click", () => {
+    if (!clicked) {
+      numOfPoints4.textContent = parseInt(numOfPoints4.textContent) - 1;
+      document.querySelector(".week4-points").textContent =
+        parseInt(document.querySelector(".week4-points").textContent) - 1;
+      document.querySelector(".total-week-points-amount").textContent =
+        parseInt(
+          document.querySelector(".total-week-points-amount").textContent
+        ) +
+        parseInt(document.querySelector(".week1-points").textContent) +
+        parseInt(document.querySelector(".week2-points").textContent) +
+        parseInt(document.querySelector(".week3-points").textContent) +
+        parseInt(document.querySelector(".week4-points").textContent);
       clicked = true;
     }
   });
@@ -491,10 +624,10 @@ Rice.addEventListener("click", function () {
 });
 
 Roti.addEventListener("click", function () {
-  document.querySelector(".ft4").textContent = "Roti";
-  document.querySelector(".twoft4").textContent = "Roti";
-  document.querySelector(".threeft4").textContent = "Roti";
-  document.querySelector(".fourft4").textContent = "Roti";
+  document.querySelector(".ft4").textContent = "Bread";
+  document.querySelector(".twoft4").textContent = "Bread";
+  document.querySelector(".threeft4").textContent = "Bread";
+  document.querySelector(".fourft4").textContent = "Bread";
 });
 
 Fruits.addEventListener("click", function () {
@@ -579,6 +712,70 @@ Others2.addEventListener("click", function () {
   document.querySelector(".twoat16").textContent = "Others";
   document.querySelector(".threeat16").textContent = "Others";
   document.querySelector(".fourat16").textContent = "Others";
+});
+
+twoEggs.addEventListener("click", function () {
+  document.querySelector(".fiveft1").textContent = "Eggs";
+});
+
+twoMilk.addEventListener("click", function () {
+  document.querySelector(".fiveft2").textContent = "Milk";
+});
+
+twoRice.addEventListener("click", function () {
+  document.querySelector(".fiveft3").textContent = "Rice";
+});
+
+twoRoti.addEventListener("click", function () {
+  document.querySelector(".fiveft4").textContent = "Bread";
+});
+
+twoFruits.addEventListener("click", function () {
+  document.querySelector(".fiveft5").textContent = "Fruits";
+});
+
+twoVegetables.addEventListener("click", function () {
+  document.querySelector(".fiveft6").textContent = "Vegetables";
+});
+
+twoDates.addEventListener("click", function () {
+  document.querySelector(".fiveft7").textContent = "Dates";
+});
+
+twoNuts.addEventListener("click", function () {
+  document.querySelector(".fiveft8").textContent = "Nuts";
+});
+
+twoOthers1.addEventListener("click", function () {
+  document.querySelector(".fiveft9").textContent = "Others";
+});
+
+twoSalahPrayer.addEventListener("click", function () {
+  document.querySelector(".fiveat10").textContent = "Prayer";
+});
+
+twoSchoolHomework.addEventListener("click", function () {
+  document.querySelector(".fiveat11").textContent = "School Homework";
+});
+
+twoStudies.addEventListener("click", function () {
+  document.querySelector(".fiveat12").textContent = "Studies";
+});
+
+twoPhysicalActivities.addEventListener("click", function () {
+  document.querySelector(".fiveat13").textContent = "Physical Activities";
+});
+
+twoHelpToCleanTheHouse.addEventListener("click", function () {
+  document.querySelector(".fiveat14").textContent = "Help to Clean the House";
+});
+
+twoQuran.addEventListener("click", function () {
+  document.querySelector(".fiveat15").textContent = "Quran";
+});
+
+twoOthers2.addEventListener("click", function () {
+  document.querySelector(".fiveat16").textContent = "Others";
 });
 
 var checkbox = document.getElementById("myCheckbox");
